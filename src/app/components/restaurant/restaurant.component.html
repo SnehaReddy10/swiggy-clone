@@ -1,0 +1,23 @@
+<ion-item lines="none">
+  <ion-thumbnail slot="start">
+    <img [src]="restaurant?.cover ? restaurant.cover : 'assets/imgs/1.jpg'">
+  </ion-thumbnail>
+  <ion-label>
+    <h4>{{restaurant?.name}}</h4>
+    <ion-text color="medium">
+      <p class="pStyle">
+        {{getCuisines(restaurant?.cuisines)}}
+      </p>
+    </ion-text>
+      <span>
+        <ion-icon name="star"></ion-icon>
+        {{ restaurant?.rating }}
+      </span>
+      {{ restaurant?.time }} {{ restaurant?.cost }}
+    <ion-text color="danger" *ngIf="restaurant?.dist && restaurant?.dist != 0">
+      <p class="distance">
+        {{restaurant?.dist}}
+      </p>
+    </ion-text>
+  </ion-label>
+</ion-item>
